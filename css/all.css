@@ -1,0 +1,70 @@
+html,
+body{
+	height: 100%;
+}
+body{
+	margin:0;
+	color:#000;
+	font:12px/15px Arial, Helvetica, sans-serif;
+	min-width:1003px;
+	background: #fff;
+}
+img{
+	border-style:none;
+	vertical-align:top;
+}
+a:active{background-color:transparent;}
+input,
+textarea,
+select{
+	font:100% Arial, Helvetica, sans-serif;
+	vertical-align:middle;
+	color:#000;
+}
+form,fieldset{
+	margin:0;
+	padding:0;
+	border-style:none;
+}
+header,
+footer,
+article,
+section,
+nav,
+figure,
+aside{display:block;}
+figure{
+	margin:0;
+	padding:0;
+}
+.photo_copy{
+	position: relative;
+	z-index: 5;
+}
+.image{
+	position: relative;
+	z-index: 10;
+}
+.crop-box{
+	position: absolute;
+	z-index: 9;
+	left: 0;
+	top: 0;
+	width: 100px;
+	height: 100px;
+	border: 1px dotted #fff;
+}
+.crop-box-control{
+	position: absolute;
+	right: -5px;
+	bottom: -5px;
+	width: 8px;
+	height: 8px;
+	border: 1px solid #fff;
+	background: #fff;
+}
+.crop-box:hover{ cursor: move;}
+.crop-box-control:hover{ cursor: crosshair;}
+.my-canvas{
+	display: block;
+}
