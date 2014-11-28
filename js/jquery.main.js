@@ -33,22 +33,24 @@ function initCropFunc() {
 }
 
 function startMoveCropBox() {
-    $(this).on('mousemove', moveCropBox);
+    $('body').on('mousemove', moveCropBox);
+    $('body').on('mouseup', stopMoveCropBox);
 }
 
 function moveCropBox(e) {
-    $(this).css('left', e.pageX - $(this).width()/2);
-    $(this).css('top', e.pageY - $(this).height()/2);
+    $('.crop-box').css('left', e.pageX - $('.crop-box').width()/2);
+    $('.crop-box').css('top', e.pageY - $('.crop-box').height()/2);
 }
 
 function stopMoveCropBox() {
-    $(this).off('mousemove');
+    $('body').off('mousemove');
 }
 
 
 function startChangeCropBox(e) {
     e.stopPropagation();
-    $(this).on('mousemove', changeCropBox);
+    $('body').on('mousemove', changeCropBox);
+    $('body').on('mouseup', stopChangeCropBox);
 }
 
 function changeCropBox(e) {
@@ -59,7 +61,7 @@ function changeCropBox(e) {
 }
 
 function stopChangeCropBox() {
-    $(this).off('mousemove');
+    $('body').off('mousemove');
 }
 
 function crop() {
