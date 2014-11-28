@@ -7,17 +7,21 @@ function showPreviewImage_click() {
         var inputFiles = this.files;
         if(inputFiles == undefined || inputFiles.length == 0) return;
         var inputFile = inputFiles[0];
-        var img = $('<img/>',{'class':'preview', 'id':'preview'});
-        img.appendTo($('.photo_copy'));
-        var reader = new FileReader();
-        reader.onload = function(event) {
-            img.attr("src", event.target.result);
-            initCropFunc();
-        };
-        reader.onerror = function(event) {
-            alert("ERROR: " + event.target.error.code);
-        };
-        reader.readAsDataURL(inputFile);
+        if (inputFile.type === "image/jpeg" || inputFile.type === "image/jpg" || inputFile.type === "image/png" || inputFile.type === "image/gif") {
+            var img = $('<img/>',{'class':'preview', 'id':'preview'});
+            img.appendTo($('.photo_copy'));
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                img.attr("src", event.target.result);
+                initCropFunc();
+            };
+            reader.onerror = function(event) {
+                alert("ERROR: " + event.target.error.code);
+            };
+            reader.readAsDataURL(inputFile);
+        } else{
+            alert('Error image file type!')
+        }
     }
     catch(e) {
         if(e.name === "ReferenceError"){
