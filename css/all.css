@@ -40,6 +40,16 @@ figure{
 .photo_copy{
 	position: relative;
 	z-index: 5;
+	overflow: hidden;
+}
+.photo_copy:after{
+	content: '';
+	position: absolute;
+	z-index: 3;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
 }
 .image{
 	position: relative;
@@ -50,9 +60,11 @@ figure{
 	z-index: 9;
 	left: 0;
 	top: 0;
+	opacity: 0.7;
 	width: 100px;
 	height: 100px;
-	border: 1px dotted #fff;
+	border: 1px dashed #fff;
+	background: rgba(255, 255, 255, 0.4) url(../images/crop-bg.png) repeat;
 }
 .crop-box-control{
 	position: absolute;
@@ -60,8 +72,12 @@ figure{
 	bottom: -5px;
 	width: 8px;
 	height: 8px;
-	border: 1px solid #fff;
+	border: 1px solid #000;
 	background: #fff;
+}
+.crop-box-control:after{
+	content: '';
+	position: absolute;
 }
 .crop-box:hover{ cursor: move;}
 .crop-box-control:hover{ cursor: crosshair;}
