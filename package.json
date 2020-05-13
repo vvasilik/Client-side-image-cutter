@@ -1,0 +1,25 @@
+{
+  "name": "Client-side-image-cutter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html -p 8080",
+    "build": "parcel build index.html --out-dir docs",
+    "prebuild": "rm -rf docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vvasilik/Client-side-image-cutter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vvasilik/Client-side-image-cutter/issues"
+  },
+  "homepage": "https://github.com/vvasilik/Client-side-image-cutter#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
